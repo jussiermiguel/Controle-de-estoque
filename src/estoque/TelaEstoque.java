@@ -12,6 +12,8 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Color;
+import java.awt.Font;
 
 public class TelaEstoque {
 
@@ -49,20 +51,26 @@ public class TelaEstoque {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.getContentPane().setBackground(new Color(0, 0, 255));
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JLabel lblNewLabel_Titulo = new JLabel("Controle de Estoque");
-		lblNewLabel_Titulo.setBounds(156, 22, 122, 14);
+		lblNewLabel_Titulo.setForeground(new Color(255, 255, 255));
+		lblNewLabel_Titulo.setFont(new Font("Wide Latin", Font.BOLD, 16));
+		lblNewLabel_Titulo.setBackground(new Color(0, 128, 255));
+		lblNewLabel_Titulo.setBounds(61, 22, 309, 14);
 		frame.getContentPane().add(lblNewLabel_Titulo);
 		
 		JLabel lblNewLabel_Nome = new JLabel("Nome");
-		lblNewLabel_Nome.setBounds(25, 57, 46, 14);
+		lblNewLabel_Nome.setFont(new Font("Times New Roman", Font.BOLD, 12));
+		lblNewLabel_Nome.setBackground(new Color(0, 128, 255));
+		lblNewLabel_Nome.setBounds(25, 57, 63, 14);
 		frame.getContentPane().add(lblNewLabel_Nome);
 		
 		textField_Nome = new JTextField();
-		textField_Nome.setBounds(80, 54, 86, 20);
+		textField_Nome.setBounds(80, 53, 86, 20);
 		frame.getContentPane().add(textField_Nome);
 		textField_Nome.setColumns(10);
 		
@@ -81,6 +89,9 @@ public class TelaEstoque {
 		scrollPane.setViewportView(table);
 		
 		JButton btnNewButton_Cadastrar = new JButton("Cadastrar");		
+		btnNewButton_Cadastrar.setForeground(new Color(255, 255, 255));
+		btnNewButton_Cadastrar.setBackground(new Color(0, 128, 192));
+		btnNewButton_Cadastrar.setFont(new Font("Trebuchet MS", Font.BOLD, 14));
 		btnNewButton_Cadastrar.addActionListener(new ActionListener() {
 		    public void actionPerformed(ActionEvent e) {
 		        // Capturando a tela
@@ -120,10 +131,12 @@ public class TelaEstoque {
 		});
 
 		
-		btnNewButton_Cadastrar.setBounds(10, 227, 89, 23);
+		btnNewButton_Cadastrar.setBounds(281, 91, 109, 23);
 		frame.getContentPane().add(btnNewButton_Cadastrar);
 		
 		JButton btnNewButton_Adicionar = new JButton("Adicionar");
+		btnNewButton_Adicionar.setForeground(new Color(255, 255, 255));
+		btnNewButton_Adicionar.setBackground(new Color(0, 255, 255));
 		btnNewButton_Adicionar.addActionListener(new ActionListener() {
 		    public void actionPerformed(ActionEvent e) {
 		    	int selectedRow = table.getSelectedRow();
@@ -164,10 +177,13 @@ public class TelaEstoque {
 
 		    }
 		});
-		btnNewButton_Adicionar.setBounds(170, 227, 89, 23);
+		btnNewButton_Adicionar.setBounds(80, 228, 89, 23);
 		frame.getContentPane().add(btnNewButton_Adicionar);
 		
 		JButton btnNewButton_Retirar = new JButton("Retirar");
+		btnNewButton_Retirar.setFont(new Font("Trebuchet MS", Font.BOLD, 14));
+		btnNewButton_Retirar.setForeground(new Color(255, 255, 255));
+		btnNewButton_Retirar.setBackground(new Color(255, 0, 0));
 		btnNewButton_Retirar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				int selectedRow = table.getSelectedRow();
@@ -210,10 +226,12 @@ public class TelaEstoque {
 		        }
 			}
 		});
-		btnNewButton_Retirar.setBounds(335, 227, 89, 23);
+		btnNewButton_Retirar.setBounds(281, 227, 89, 23);
 		frame.getContentPane().add(btnNewButton_Retirar);
 		
 		JLabel lblNewLabel_Quantidade = new JLabel("Quantidade");
+		lblNewLabel_Quantidade.setBackground(new Color(0, 128, 255));
+		lblNewLabel_Quantidade.setFont(new Font("Times New Roman", Font.BOLD, 12));
 		lblNewLabel_Quantidade.setBounds(224, 57, 70, 14);
 		frame.getContentPane().add(lblNewLabel_Quantidade);
 		
@@ -223,6 +241,8 @@ public class TelaEstoque {
 		textField_Quantidade.setColumns(10);
 		
 		JLabel lblNewLabel_Valor = new JLabel("Valor");
+		lblNewLabel_Valor.setFont(new Font("Times New Roman", Font.BOLD, 12));
+		lblNewLabel_Valor.setBackground(new Color(0, 128, 255));
 		lblNewLabel_Valor.setBounds(25, 96, 46, 14);
 		frame.getContentPane().add(lblNewLabel_Valor);
 		
@@ -232,7 +252,10 @@ public class TelaEstoque {
 		textField_Valor.setColumns(10);
 		
 		JLabel lblNewLabel_TituloTabela = new JLabel("Tabela Estoque");
-		lblNewLabel_TituloTabela.setBounds(170, 116, 78, 14);
+		lblNewLabel_TituloTabela.setFont(new Font("Times New Roman", Font.BOLD, 14));
+		lblNewLabel_TituloTabela.setBackground(new Color(0, 128, 255));
+		lblNewLabel_TituloTabela.setForeground(new Color(255, 255, 255));
+		lblNewLabel_TituloTabela.setBounds(159, 116, 100, 14);
 		frame.getContentPane().add(lblNewLabel_TituloTabela);
 	}
 
